@@ -24,7 +24,7 @@ class App extends React.Component {
       /*mapped using this.state over our dummydata and passed it to post container. naming the item post */
     }
     return (
-      <div>
+      <div className="App">
         <div>
           <SearchBar />
         </div>

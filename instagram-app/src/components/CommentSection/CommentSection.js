@@ -22,7 +22,7 @@ const CommentSection = props => {
 // added proptypes to check data//
 CommentSection.propTypes = {
   comment: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.number,
     username: PropTypes.string,
     text: PropTypes.string
   })

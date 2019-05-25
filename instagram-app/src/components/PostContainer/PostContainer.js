@@ -2,6 +2,7 @@ import React from "react";
 import dummyData from "../../dummy-data";
 import CommentSection from "../CommentSection/CommentSection";
 import PropTypes from "prop-types";
+import "./PostContainer.css";
 
 const PostContainer = props => {
   {
@@ -9,10 +10,12 @@ const PostContainer = props => {
   }
   console.log(props.post);
   return (
-    <div className="post-container">
-      {props.post.username}
-      <img src={props.post.thumbnailUrl} />
-      <img src={props.post.imageUrl} />
+    <div className="container">
+      <div className="post-container">
+        <img className="thumbnail" src={props.post.thumbnailUrl} />
+        <h4 className="username">{props.post.username}</h4>
+      </div>
+      <img className="image" src={props.post.imageUrl} />
       <p> {props.post.likes}</p>
       <p> {props.post.timestamp}</p>
 
@@ -32,10 +35,9 @@ const PostContainer = props => {
 
 PostContainer.propTypes = {
   post: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    img: PropTypes.string.isRequired,
+    img: PropTypes.string,
     likes: PropTypes.number,
-    timestamp: PropTypes.number
+    timestamp: PropTypes.string
   })
 };
 
