@@ -31,6 +31,9 @@ class App extends React.Component {
         {this.state.dummyData.map(item => {
           console.log(item);
           return <PostContainer key={item.timestamp} post={item} />;
+          {
+            /* added unique time stanp key to get rid of the warning*/
+          }
         })}
       </div>
     );

@@ -4,7 +4,7 @@ import CommentSection from "../CommentSection/CommentSection";
 
 const SearchBar = props => {
   return (
-    <div>
+    <div className="search">
       <input placeholder="Search" type="text" />
     </div>
   );

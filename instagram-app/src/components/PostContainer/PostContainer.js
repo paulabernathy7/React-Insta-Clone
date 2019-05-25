@@ -1,6 +1,7 @@
 import React from "react";
 import dummyData from "../../dummy-data";
 import CommentSection from "../CommentSection/CommentSection";
+import PropTypes from "prop-types";
 
 const PostContainer = props => {
   {
@@ -8,14 +9,16 @@ const PostContainer = props => {
   }
   console.log(props.post);
   return (
-    <div>
+    <div className="post-container">
       {props.post.username}
       <img src={props.post.thumbnailUrl} />
       <img src={props.post.imageUrl} />
-      {props.post.likes}
-      {props.post.timestamp}
+      <p> {props.post.likes}</p>
+      <p> {props.post.timestamp}</p>
 
       {/* mapping over our comments and then passing them to the CommentSection component */}
+      {/* used index for get rid of the key warining */}
+
       <div>
         {props.post.comments.map((item, index) => {
           console.log("RGA", item);
@@ -24,6 +27,16 @@ const PostContainer = props => {
       </div>
     </div>
   );
+};
+// added proptypes to check data//
+
+PostContainer.propTypes = {
+  post: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    img: PropTypes.string.isRequired,
+    likes: PropTypes.number,
+    timestamp: PropTypes.number
+  })
 };
 
 export default PostContainer;
