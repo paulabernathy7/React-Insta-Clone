@@ -1,0 +1,11 @@
+.comment-section {
+  display: flex;
+}
+
+.h3 {
+  font-size: 15px;
+}
+
+.text {
+  margin-left: 5px;
+}

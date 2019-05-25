@@ -16,8 +16,8 @@ const PostContainer = props => {
         <h4 className="username">{props.post.username}</h4>
       </div>
       <img className="image" src={props.post.imageUrl} />
-      <p> {props.post.likes}</p>
-      <p> {props.post.timestamp}</p>
+      <p className="likes"> {props.post.likes} likes </p>
+      {/* <p> {props.post.timestamp}</p> */}
 
       {/* mapping over our comments and then passing them to the CommentSection component */}
       {/* used index for get rid of the key warining */}
@@ -36,8 +36,8 @@ const PostContainer = props => {
 PostContainer.propTypes = {
   post: PropTypes.shape({
     img: PropTypes.string,
-    likes: PropTypes.number,
-    timestamp: PropTypes.string
+    likes: PropTypes.number
+    // timestamp: PropTypes.string
   })
 };
 
