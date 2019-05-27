@@ -16,7 +16,15 @@ const PostContainer = props => {
         <h4 className="username">{props.post.username}</h4>
       </div>
       <img className="image" src={props.post.imageUrl} />
+      <div className="post-icons">
+        <img src="https://img.icons8.com/windows/32/000000/hearts.png" />
+        <img
+          className="speech"
+          src="https://img.icons8.com/material-outlined/24/000000/speech-bubble.png"
+        />
+      </div>
       <p className="likes"> {props.post.likes} likes </p>
+
       {/* <p> {props.post.timestamp}</p> */}
 
       {/* mapping over our comments and then passing them to the CommentSection component */}

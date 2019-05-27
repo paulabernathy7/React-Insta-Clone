@@ -1,5 +1,7 @@
 .comment-section {
   display: flex;
+  justify-content: flex-start;
+  margin-top: -25px;
 }
 
 .h3 {
