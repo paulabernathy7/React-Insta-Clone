@@ -16,7 +16,11 @@ class App extends React.Component {
 
   // mounted the component below after setting the dummyData to an array//
   componentDidMount() {
-    this.setState({ dummyData });
+    //this.setState({dummyData: dummyData})
+    //key = dummyData from the state
+    //value = dummyData from the dummyData imported on line 4
+    // when key is the same as the value you can use thhis.setState({dummyData})
+    this.setState({ dummyData: dummyData });
   }
 
   render() {

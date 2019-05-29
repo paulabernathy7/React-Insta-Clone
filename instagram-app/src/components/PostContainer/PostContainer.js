@@ -1,6 +1,7 @@
 import React from "react";
 import dummyData from "../../dummy-data";
 import CommentSection from "../CommentSection/CommentSection";
+import AddComment from "../CommentSection/AddComment";
 import PropTypes from "prop-types";
 import "./PostContainer.css";
 
@@ -29,12 +30,13 @@ const PostContainer = props => {
 
       {/* mapping over our comments and then passing them to the CommentSection component */}
       {/* used index for get rid of the key warining */}
+      {/* created AddComment component and passed it to postcontainter because that is where my post are*/}
 
       <div>
         {props.post.comments.map((item, index) => {
-          console.log("RGA", item);
           return <CommentSection key={index} comment={item} />;
         })}
+        <AddComment />
       </div>
     </div>
   );

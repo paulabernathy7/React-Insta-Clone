@@ -11,3 +11,9 @@
 .text {
   margin-left: 5px;
 }
+
+.comment {
+  display: flex;
+  width: 635px;
+  line-height: 60px;
+}
