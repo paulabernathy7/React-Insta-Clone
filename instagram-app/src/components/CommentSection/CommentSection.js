@@ -10,7 +10,8 @@ class CommentSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      comments: []
+      comments: [],
+      comment: ""
     };
   }
 
@@ -18,6 +19,19 @@ class CommentSection extends React.Component {
     // when using class component you have to use this.props
     this.setState({ comments: this.props.comment });
   }
+
+  //   addComment = e => {
+  //     e.preventDefault();
+  //     const newComment = { text: this.state.comment };
+  //     const otherComments = [...this.state.comments, newComment];
+  //     this.setState({ comments: otherComments });
+  //   };
+
+  commentHandler = event => {
+    this.setState({
+      comment: event.target.value
+    });
+  };
 
   render() {
     console.log(this.state.comments);

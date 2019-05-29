@@ -5,9 +5,15 @@ import { Button } from "reactstrap";
 import "./CommentSection.css";
 
 const AddComment = props => {
+  console.log("props", props);
   return (
     <form>
-      <input className="comment" placeholder="Add a comment..." type="text" />
+      <input
+        onChange={props.changeHandler}
+        className="comment"
+        placeholder="Add a comment..."
+        type="text"
+      />
     </form>
   );
 };
