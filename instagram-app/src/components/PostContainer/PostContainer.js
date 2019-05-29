@@ -9,16 +9,32 @@ class PostContainer extends React.Component {
   constructor() {
     super();
     this.state = {
+      comments: [],
       comment: ""
     };
   }
 
+  // created the handler to update the state when a comment is being typed
   commentHandler = event => {
     this.setState({
       comment: event.target.value
     });
   };
-  /*created a functional component and passed props. we passed all of the keys in our array object */
+
+  // created the function below to add comments
+  addComment = e => {
+    e.preventDefault();
+    //comment object
+    const newComment = { text: this.state.comment, username: "New User" };
+    //clone comments array
+    const comments = this.state.comments.slice();
+    //push newcomment obj into array
+    comments.push(newComment);
+    //set new clone as state and reset our comment string
+    this.setState({ comments, comment: "" });
+  };
+
+  /*created a class component and passed props. we passed all of the keys in our array object */
   render() {
     return (
       <div className="container">
@@ -41,12 +57,17 @@ class PostContainer extends React.Component {
         {/* mapping over our comments and then passing them to the CommentSection component */}
         {/* used index for get rid of the key warining */}
         {/* created AddComment component and passed it to postcontainter because that is where my post are*/}
+        {/* added changeHandler to AddComment component to update the state on change*/}
 
         <div>
           {this.props.post.comments.map((item, index) => {
             return <CommentSection key={index} comment={item} />;
           })}
-          <AddComment changeHandler={this.commentHandler} />
+          <AddComment
+            changeHandler={this.commentHandler}
+            comment={this.state.comment}
+            submitHandler={this.addComment}
+          />
         </div>
       </div>
     );

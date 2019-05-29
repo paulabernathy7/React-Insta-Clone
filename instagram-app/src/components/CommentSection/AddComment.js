@@ -7,8 +7,9 @@ import "./CommentSection.css";
 const AddComment = props => {
   console.log("props", props);
   return (
-    <form>
+    <form onSubmit={props.submitHandler}>
       <input
+        value={props.comment}
         onChange={props.changeHandler}
         className="comment"
         placeholder="Add a comment..."

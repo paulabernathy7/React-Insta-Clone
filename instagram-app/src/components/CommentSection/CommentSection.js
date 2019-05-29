@@ -20,19 +20,6 @@ class CommentSection extends React.Component {
     this.setState({ comments: this.props.comment });
   }
 
-  //   addComment = e => {
-  //     e.preventDefault();
-  //     const newComment = { text: this.state.comment };
-  //     const otherComments = [...this.state.comments, newComment];
-  //     this.setState({ comments: otherComments });
-  //   };
-
-  commentHandler = event => {
-    this.setState({
-      comment: event.target.value
-    });
-  };
-
   render() {
     console.log(this.state.comments);
     return (
