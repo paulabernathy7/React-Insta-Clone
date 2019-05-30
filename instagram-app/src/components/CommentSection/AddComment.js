@@ -1,4 +1,5 @@
 import React from "react";
+import PostContainer from "../PostContainer/PostContainer";
 import CommentSection from "./CommentSection";
 import PropTypes from "prop-types";
 import { Button } from "reactstrap";

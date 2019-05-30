@@ -6,10 +6,10 @@ import PropTypes from "prop-types";
 import "./PostContainer.css";
 
 class PostContainer extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      comments: [],
+      comments: this.props.post.comments,
       comment: ""
     };
   }
@@ -31,7 +31,8 @@ class PostContainer extends React.Component {
     //push newcomment obj into array
     comments.push(newComment);
     //set new clone as state and reset our comment string
-    this.setState({ comments, comment: "" });
+
+    this.setState({ comments: comments, comment: "" });
   };
 
   /*created a class component and passed props. we passed all of the keys in our array object */
@@ -60,13 +61,13 @@ class PostContainer extends React.Component {
         {/* added changeHandler to AddComment component to update the state on change*/}
 
         <div>
-          {this.props.post.comments.map((item, index) => {
+          {this.state.comments.map((item, index) => {
             return <CommentSection key={index} comment={item} />;
           })}
           <AddComment
+            submitHandler={this.addComment}
             changeHandler={this.commentHandler}
             comment={this.state.comment}
-            submitHandler={this.addComment}
           />
         </div>
       </div>
