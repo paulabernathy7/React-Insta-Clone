@@ -6,6 +6,8 @@ import PropTypes from "prop-types";
 import "./PostContainer.css";
 
 class PostContainer extends React.Component {
+  /*created a class component and passed props. we passed all of the keys in our array object */
+  /*passed our comments array from the app component to state. Then added empty comment to our state*/
   constructor(props) {
     super(props);
     this.state = {
@@ -35,7 +37,6 @@ class PostContainer extends React.Component {
     this.setState({ comments: comments, comment: "" });
   };
 
-  /*created a class component and passed props. we passed all of the keys in our array object */
   render() {
     return (
       <div className="container">
@@ -52,8 +53,6 @@ class PostContainer extends React.Component {
           />
         </div>
         <p className="likes"> {this.props.post.likes} likes </p>
-
-        {/* <p> {props.post.timestamp}</p> */}
 
         {/* mapping over our comments and then passing them to the CommentSection component */}
         {/* used index for get rid of the key warining */}
@@ -80,7 +79,6 @@ PostContainer.propTypes = {
   post: PropTypes.shape({
     img: PropTypes.string,
     likes: PropTypes.number
-    // timestamp: PropTypes.string
   })
 };
 
