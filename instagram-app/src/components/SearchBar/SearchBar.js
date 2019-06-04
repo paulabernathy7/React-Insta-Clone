@@ -1,6 +1,7 @@
 import React from "react";
 import dummyData from "../../dummy-data";
 import CommentSection from "../CommentSection/CommentSection";
+import PostContainer from "../PostContainer/PostContainer";
 import "./SearchBar.css";
 
 const SearchBar = props => {
