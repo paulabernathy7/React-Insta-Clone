@@ -1,7 +1,7 @@
 import React from "react";
-import dummyData from "../../dummy-data";
-import CommentSection from "../CommentSection/CommentSection";
-import PostContainer from "../PostContainer/PostContainer";
+// import dummyData from "../../dummy-data";
+// import CommentSection from "../CommentSection/CommentSection";
+// import PostContainer from "../PostContainer/PostContainer";
 import "./SearchBar.css";
 
 const SearchBar = props => {
@@ -14,7 +14,12 @@ const SearchBar = props => {
         />
         <h1 className="logo">Instagram</h1>
       </div>
-      <input className="searchbar" placeholder="Search" type="text" />
+      <input
+        className="searchbar"
+        placeholder="Search"
+        type="text"
+        onChange={props.searchHandler}
+      />
       <div className="icons">
         <img
           className="icon"

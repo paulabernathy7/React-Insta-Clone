@@ -1,8 +1,8 @@
 import React from "react";
-import dummyData from "../../dummy-data";
+// import dummyData from "../../dummy-data";
 import CommentSection from "../CommentSection/CommentSection";
 import AddComment from "../CommentSection/AddComment";
-import SearchBar from "../SearchBar/SearchBar";
+// import SearchBar from "../SearchBar/SearchBar";
 import PropTypes from "prop-types";
 import "./PostContainer.css";
 
@@ -14,9 +14,7 @@ class PostContainer extends React.Component {
     this.state = {
       comments: this.props.post.comments,
       comment: "",
-      likes: this.props.post.likes,
-      post: [],
-      filteredPosts: []
+      likes: this.props.post.likes
     };
   }
 
@@ -47,15 +45,6 @@ class PostContainer extends React.Component {
     // since is on my state now I needed to pass the state below.
     const likes = this.state.likes;
     this.setState({ likes: likes + 1 });
-  };
-
-  searchHandler = event => {
-    const posts = this.state.posts.filter(item => {
-      if (item.username.includes(event.target.value)) {
-        return item;
-      }
-    });
-    this.setState({ filteredPosts: posts });
   };
 
   render() {

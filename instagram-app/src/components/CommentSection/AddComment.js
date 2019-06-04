@@ -6,7 +6,7 @@ import { Button } from "reactstrap";
 import "./CommentSection.css";
 
 const AddComment = props => {
-  console.log("props", props);
+  // console.log("props", props);
   return (
     <form onSubmit={props.submitHandler}>
       <input

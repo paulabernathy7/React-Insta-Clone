@@ -1,8 +1,8 @@
 import React from "react";
-import logo from "./logo.svg";
-import dummyData from "./dummy-data";
+// import logo from "./logo.svg";
+// import dummyData from "./dummy-data";
 import PostPage from "./components/PostContainer/PostPage";
-import { id } from "postcss-selector-parser";
+// import { id } from "postcss-selector-parser";
 import withAuthenticate from "./authentication/withAuthenticate";
 
 class App extends React.Component {

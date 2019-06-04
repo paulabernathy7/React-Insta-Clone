@@ -21,7 +21,7 @@ class CommentSection extends React.Component {
   }
 
   render() {
-    console.log(this.state.comments);
+    // console.log(this.state.comments);
     return (
       <div className="comment-section">
         <h3 className="h3">{this.state.comments.username}</h3>
