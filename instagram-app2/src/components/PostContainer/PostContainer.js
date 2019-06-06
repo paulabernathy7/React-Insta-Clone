@@ -20,6 +20,8 @@ const PostContainer = props => {
         />
       </div>
       <p className="likes"> {props.post.likes} likes </p>
+      {/* mapping over our comments and then passing them to the CommentSection component */}
+
       {props.post.comments.map(item => {
         return <CommentSection comment={item} />;
       })}
