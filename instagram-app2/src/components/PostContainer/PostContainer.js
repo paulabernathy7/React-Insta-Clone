@@ -12,7 +12,8 @@ class PostContainer extends React.Component {
     super(props);
     this.state = {
       comments: this.props.post.comments,
-      comment: ""
+      comment: "",
+      likes: this.props.post.likes
     };
   }
 
@@ -35,6 +36,11 @@ class PostContainer extends React.Component {
     this.setState({ comments, comment: "" });
   };
 
+  incrementLike = () => {
+    const likes = this.state.likes;
+    this.setState({ likes: likes + 1 });
+  };
+
   render() {
     return (
       <div className="container">
@@ -44,13 +50,18 @@ class PostContainer extends React.Component {
         </div>
         <img className="image" src={this.props.post.imageUrl} />
         <div className="post-icons">
-          <img src="https://img.icons8.com/windows/32/000000/hearts.png" />
+          <img
+            onClick={this.incrementLike}
+            src="https://img.icons8.com/windows/32/000000/hearts.png"
+          />
           <img
             className="speech"
             src="https://img.icons8.com/material-outlined/24/000000/speech-bubble.png"
           />
         </div>
-        <p className="likes"> {this.props.post.likes} likes </p>
+        <p className="likes"> {this.state.likes} likes </p>
+        {/* above had to refactor likes to this.state since likes is now on state*/}
+
         {/* mapping over our comments and then passing them to the CommentSection component */}
 
         {this.state.comments.map(item => {
