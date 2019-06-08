@@ -1,10 +1,12 @@
 import React from "react";
 import App from "../../App";
+import AddComment from "../CommentSection/AddComment";
 import CommentSection from "../CommentSection/CommentSection";
 import "./PostContainer.css";
 
 // printing each post to the screen using props
 // refactored into class component
+//note when using a class componet and state remmeber to use THIS
 class PostContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -13,6 +15,25 @@ class PostContainer extends React.Component {
       comment: ""
     };
   }
+
+  // event that update state when a comment is being typed
+  handleComment = event => {
+    this.setState({
+      comment: event.target.value
+    });
+  };
+
+  addComment = event => {
+    event.preventDefault();
+    // new object created
+    const newComment = { text: this.state.comment, username: "New User" };
+    // cloned comments array
+    const comments = this.state.comments.slice();
+    // pushed newComment obj
+    comments.push(newComment);
+    // set new clone as state and reset our comment stringt
+    this.setState({ comments, comment: "" });
+  };
 
   render() {
     return (
@@ -32,9 +53,15 @@ class PostContainer extends React.Component {
         <p className="likes"> {this.props.post.likes} likes </p>
         {/* mapping over our comments and then passing them to the CommentSection component */}
 
-        {this.props.post.comments.map(item => {
+        {this.state.comments.map(item => {
           return <CommentSection comment={item} />;
         })}
+
+        <AddComment
+          submitHandle={this.addComment}
+          changeHandle={this.handleComment}
+          comment={this.state.comment}
+        />
       </div>
     );
   }
