@@ -1,0 +1,34 @@
+.search {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #3333;
+  margin-top: 50px;
+  margin-top: 30px;
+}
+
+.searchbar {
+  width: 300px;
+  text-align: center;
+  height: 30px;
+  margin-top: 30px;
+  margin-right: 100px;
+}
+
+.ig {
+  display: flex;
+  margin-left: 50px;
+}
+
+.icons {
+  margin-right: 50px;
+  margin-top: 30px;
+}
+
+.icon {
+  margin-right: 40px;
+}
+
+.logo {
+  margin-right: 40px;
+  font: Boutiera;
+}

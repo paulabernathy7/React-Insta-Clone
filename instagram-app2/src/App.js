@@ -1,9 +1,9 @@
 import React from "react";
-import logo from "./logo.svg";
 import dummyData from "./dummy-data";
 import PostContainer from "./components/PostContainer/PostContainer";
 
 import "./App.css";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 class App extends React.Component {
   constructor() {
@@ -19,9 +19,13 @@ class App extends React.Component {
   }
 
   // mapping over dummydate and passing each post to PostContainer
+  //passed searbar from searchbar
   render() {
     return (
       <div className="App">
+        <div>
+          <SearchBar />
+        </div>
         {this.state.dummyData.map(item => {
           return <PostContainer post={item} />;
         })}
