@@ -12,7 +12,15 @@ const SearchBar = props => {
         />
         <h1 className="logo">Instagram</h1>
       </div>
-      <input className="searchbar" placeholder="Search" type="text" />
+      <form onSubmit={props.searchHandle}>
+        <input
+          className="searchbar"
+          placeholder="Search"
+          type="text"
+          value={props.search}
+          onChange={props.inputHandle}
+        />
+      </form>
       <div className="icons">
         <img
           className="icon"
