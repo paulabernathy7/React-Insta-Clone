@@ -1,14 +1,20 @@
 import React from "react";
-import dummyData from "./dummy-data";
-import PostContainer from "./components/PostContainer/PostContainer";
 import "./App.css";
-import SearchBar from "./components/SearchBar/SearchBar";
 import PostPage from "./components/PostContainer/PostPage";
+import withAuthenticate from "./authentication/withAuthenticate";
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      dummyData: [],
+      username: ""
+    };
+  }
+
+  componentDidMount() {
+    const user = localStorage.getItem("user");
+    this.setState({ username: user });
   }
 
   render() {
@@ -19,5 +25,4 @@ class App extends React.Component {
     );
   }
 }
-
-export default App;
+export default withAuthenticate(App);
