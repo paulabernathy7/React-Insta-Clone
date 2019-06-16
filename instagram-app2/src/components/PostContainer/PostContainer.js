@@ -6,7 +6,7 @@ import "./PostContainer.css";
 
 // printing each post to the screen using props
 // refactored into class component
-//note when using a class componet and state remmeber to use THIS
+//note when using a class component and state remember to use THIS
 class PostContainer extends React.Component {
   constructor(props) {
     super(props);

@@ -7,7 +7,6 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      dummyData: [],
       username: ""
     };
   }
@@ -18,11 +17,7 @@ class App extends React.Component {
   }
 
   render() {
-    return (
-      <div className="App">
-        <PostPage />
-      </div>
-    );
+    return <PostPage />;
   }
 }
 export default withAuthenticate(App);
