@@ -13,18 +13,18 @@ class PostContainer extends React.Component {
     this.state = {
       comments: this.props.post.comments,
       comment: "",
-      likes: this.props.post.likes
+      likes: this.props.post.likes,
     };
   }
 
   // event that update state when a comment is being typed
-  handleComment = event => {
+  handleComment = (event) => {
     this.setState({
-      comment: event.target.value
+      comment: event.target.value,
     });
   };
 
-  addComment = event => {
+  addComment = (event) => {
     event.preventDefault();
     // new object created
     const newComment = { text: this.state.comment, username: "New User" };
@@ -64,7 +64,7 @@ class PostContainer extends React.Component {
 
         {/* mapping over our comments and then passing them to the CommentSection component */}
 
-        {this.state.comments.map(item => {
+        {this.state.comments.map((item) => {
           return <CommentSection comment={item} />;
         })}
 
