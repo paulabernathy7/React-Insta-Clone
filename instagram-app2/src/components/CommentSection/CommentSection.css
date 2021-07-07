@@ -1,0 +1,19 @@
+.comment-section {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: -25px;
+}
+
+.h3 {
+  font-size: 15px;
+}
+
+.text {
+  margin-left: 5px;
+}
+
+.comment {
+  display: flex;
+  width: 635px;
+  line-height: 60px;
+}
